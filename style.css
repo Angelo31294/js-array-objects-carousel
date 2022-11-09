@@ -1,0 +1,98 @@
+/* ------------
+    RESET
+------------ */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------
+    FONT
+------------ */
+
+/* ------------
+    MAIN
+------------ */
+
+.container{
+    display: flex;
+    background-color: brown;
+    margin: 0 auto;
+    width: 62.5rem;
+    height: 31.25rem;
+}
+
+.image-primary{
+    position: relative;
+    width: 80%;
+    background-color: aquamarine;
+    border: 1px solid;
+}
+
+.imge-carousell{
+    position: relative;
+    width: 20%;
+    background-color: yellow;
+    border: 1px solid blue;
+}
+
+.sm-image{
+    width: 100%;
+    height: 20%;
+    background-color: green;
+    border: 1px solid red;
+}
+
+.item-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-container{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+}
+/* ------------
+    BUTTON
+------------ */
+
+button{
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.up{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: .3125rem;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.down{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: .3125rem;
+    border-radius: 50%;
+    z-index: 100;
+}
