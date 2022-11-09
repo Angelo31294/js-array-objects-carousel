@@ -23,3 +23,20 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+// Milestone 1:
+// Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
+
+const carosello = document.querySelector('body');
+
+for(let i = 0; i < images.length; i++){
+    const poster = images[i];
+
+    const template = document.getElementById('post-template').content.cloneNode(true);
+
+    template.querySelector('.item-img') = poster.image;
+
+    carosello.append(template);
+};
+
+console.log(carosello);
