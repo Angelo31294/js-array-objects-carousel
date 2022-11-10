@@ -24,19 +24,84 @@ const images = [
     }
 ];
 
+console.log(images)
+
 // Milestone 1:
 // Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 
-const carosello = document.querySelector('body');
+let currentImageIndex = 0;
+const currentImageElement = document.querySelector('.image-primary');
+const thumbsContainer = document.querySelector('.imge-carousell');
 
-for(let i = 0; i < images.length; i++){
-    const poster = images[i];
+// clono la pagina
+const templateCurrentImage = document.getElementById('current-image').content.cloneNode(true);
 
-    const template = document.getElementById('post-template').content.cloneNode(true);
+// compilo l'html
+templateCurrentImage.querySelector('img').src = images[currentImageIndex].image;
+templateCurrentImage.querySelector('img').alt = images[currentImageIndex].title;
+templateCurrentImage.querySelector('.title').innerHTML = images[currentImageIndex].title;
+templateCurrentImage.querySelector('.text').innerHTML = images[currentImageIndex].text;
 
-    template.querySelector('.item-img') = poster.image;
+currentImageElement.append(templateCurrentImage);
 
-    carosello.append(template);
-};
+// thumbs
+images.forEach((elm, index) => {
+    // template thumb 
+    const templateThumb = document.getElementById('thumb').content.cloneNode(true);
 
-console.log(carosello);
+    if( index === currentImageIndex ){
+        templateThumb.querySelector('.sm-image').classList.add('active');
+    }
+    templateThumb.querySelector('img').src = elm.image;
+    templateThumb.querySelector('img').alt = elm.title;
+
+    thumbsContainer.append(templateThumb);
+
+});
+
+// seleziono le thumbs
+const thumbs = document.querySelectorAll('.sm-image');
+
+// next slide
+const btnNextSlide = document.querySelector('.down');
+btnNextSlide.addEventListener('click', function(){
+    // rimuovo classe active
+    thumbs[currentImageIndex].classList.remove('active');
+
+    // incrremento currentImageIndex
+    if (currentImageIndex < images.length - 1){
+        currentImageIndex++;
+    } else {
+        currentImageIndex = 0;
+    }
+
+    // aggiungo classe active all'immagine successiva
+    thumbs[currentImageIndex].classList.add('active');
+    // modifico img a sinistra e il testo
+    currentImageElement.querySelector('img').src = images[currentImageIndex].image;
+    currentImageElement.querySelector('img').alt = images[currentImageIndex].title;
+    currentImageElement.querySelector('.title').innerHTML = images[currentImageIndex].title;
+    currentImageElement.querySelector('.text').innerHTML = images[currentImageIndex].text;
+});
+
+// prev slide
+const btnprevSlide = document.querySelector('.up');
+btnprevSlide.addEventListener('click', function(){
+    // rimuovo classe active
+    thumbs[currentImageIndex].classList.remove('active');
+
+    // incrremento currentImageIndex
+    if (currentImageIndex > 0){
+        currentImageIndex--;
+    } else {
+        currentImageIndex = images.length -1;
+    }
+
+    // aggiungo classe active all'immagine successiva
+    thumbs[currentImageIndex].classList.add('active');
+    // modifico img a sinistra e il testo
+    currentImageElement.querySelector('img').src = images[currentImageIndex].image;
+    currentImageElement.querySelector('img').alt = images[currentImageIndex].title;
+    currentImageElement.querySelector('.title').innerHTML = images[currentImageIndex].title;
+    currentImageElement.querySelector('.text').innerHTML = images[currentImageIndex].text;
+});

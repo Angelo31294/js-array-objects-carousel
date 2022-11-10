@@ -14,45 +14,62 @@
 
 <!-- Milestone 0:
 Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider. -->
-        <terminal id="post-template" class="container">
+        <div class="container">
 
-                <!-- <div class="image-primary">
-                    <img class="item-img" src="img/01.webp" alt="">
-                    <div class="title-container">
-                        <h3 class="title">Marvel\'s Spiderman Miles Morale</h3>
+            <div class="image-primary">
+                <!-- <img class="item-img" src="img/01.webp" alt="">
+                <div class="title-container">
+                    <h3 class="title">Marvel\'s Spiderman Miles Morale</h3>
                     <p class="text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
-                    </div>
-
-                </div>
-
-                <div class="imge-carousell">
-
-                    <div class="sm-image">
-                        <img class="item-img" src="img/01.webp" alt="">
-                    </div>
-                    <div class="sm-image">
-                        <img class="item-img" src="img/02.webp" alt="">
-                    </div>
-                    <div class="sm-image">
-                        <img class="item-img" src="img/03.webp" alt="">
-                    </div>
-                    <div class="sm-image">
-                        <img class="item-img" src="img/04.webp" alt="">
-                    </div>
-                    <div class="sm-image">
-                        <img class="item-img" src="img/05.webp" alt="">
-                    </div>
-                    <button class="up">
-                        <i class="fa-solid fa-chevron-up"></i>
-                    </button>
-                    <button class="down">
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
                 </div> -->
 
-        </terminal>
+            </div>
 
+            <div class="imge-carousell">
+
+                <!-- <div class="sm-image">
+                    <img class="item-img" src="img/01.webp" alt="">
+                </div>
+                <div class="sm-image">
+                    <img class="item-img" src="img/02.webp" alt="">
+                </div>
+                <div class="sm-image">
+                    <img class="item-img" src="img/03.webp" alt="">
+                </div>
+                <div class="sm-image">
+                    <img class="item-img" src="img/04.webp" alt="">
+                </div>
+                <div class="sm-image">
+                    <img class="item-img" src="img/05.webp" alt="">
+                </div> -->
+                <button class="up">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button class="down">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+            </div>
+
+        </div>
+        <!-- Template sinistro -->
+        <template id="current-image">
+            <img class="item-img" src="img/01.webp" alt="">
+            <div class="title-container">
+                <h3 class="title">Marvel\'s Spiderman Miles Morale</h3>
+                <p class="text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+            </div>
+        </template>
+        <!-- /Template sinistro -->
+        
+        <!-- Template destro -->
+        <template id="thumb">
+            <div class="sm-image">
+                <img class="item-img" src="img/01.webp" alt="">
+            </div>
+        </template>
+        <!-- /Template destro -->
+        
         <script src="script.js"></script>
     </body>
 </html>
